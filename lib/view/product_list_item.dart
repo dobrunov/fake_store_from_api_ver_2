@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../models/product.dart';
+import '../styles/styles.dart';
 
 class ProductListItem extends StatelessWidget {
   const ProductListItem({Key? key, required this.product}) : super(key: key);
@@ -10,9 +11,9 @@ class ProductListItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Material(
-      color: Colors.white,
+      color: white,
       child: Padding(
-        padding: const EdgeInsets.all(12.0),
+        padding: pPage,
         child: Column(
           children: [
             Row(
@@ -22,26 +23,21 @@ class ProductListItem extends StatelessWidget {
                   children: [
                     const Text(
                       "FROM",
-                      style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        fontSize: 13,
-                      ),
+                      style: priceTextTextStyle,
                     ),
                     Padding(
-                      padding: const EdgeInsets.symmetric(vertical: 7.0),
+                      padding: pPrice,
                       child: Text(
                         "\$" + product.price.toString(),
-                        style: const TextStyle(
-                          fontSize: 13,
-                        ),
+                        style: priceTextStyle,
                       ),
                     ),
                     ElevatedButton(
                       style: ElevatedButton.styleFrom(
                         shape: CircleBorder(),
-                        padding: EdgeInsets.all(10),
-                        primary: Colors.black87, // background
-                        onPrimary: Colors.white, // foreground
+                        padding: pButtonCircle,
+                        primary: black87, // background
+                        onPrimary: white, // foreground
                       ),
                       child: const Icon(
                         Icons.add_shopping_cart,
@@ -52,30 +48,22 @@ class ProductListItem extends StatelessWidget {
                   ],
                 ),
                 Container(
-                  padding: EdgeInsets.all(5),
+                  padding: pImage,
                   margin: EdgeInsets.all(2),
                   child: Image.network(product.image ?? '',
                       height: 340, width: 240),
-                  //decoration: new BoxDecoration(
-                  //color: Colors.white,
-                  //borderRadius: BorderRadius.all(Radius.circular(15)),
-                  //),
                 ),
               ],
             ),
             Padding(
-              padding: const EdgeInsets.fromLTRB(2.0, 12.0, 2.0, 0.0),
+              padding: pCategory,
               child: Row(
                 children: <Widget>[
                   /// Product category
                   Container(
                     child: Text(
                       product.category ?? '',
-                      style: const TextStyle(
-                        color: Colors.teal,
-                        fontWeight: FontWeight.bold,
-                        fontSize: 12,
-                      ),
+                      style: categoryTextStyle,
                       textAlign: TextAlign.left,
                     ),
                   ),
@@ -83,45 +71,32 @@ class ProductListItem extends StatelessWidget {
                     child: Container(),
                   ),
 
-                  /// Ratig rate
-                  Container(
-                    child: ElevatedButton(
-                      style: ElevatedButton.styleFrom(
-                        shape: CircleBorder(),
-                        padding: EdgeInsets.all(6),
-                        primary: Colors.black87, // background
-                        onPrimary: Colors.white, // foreground
-                      ),
-                      child: Text(
-                        product.rating?.rate.toString() ?? '',
-                        style: const TextStyle(
-                          color: Colors.white,
-                          fontWeight: FontWeight.bold,
-                          fontSize: 12,
-                        ),
-                        textAlign: TextAlign.right,
-                      ),
-                      onPressed: () {},
+                  /// Rating rate
+                  ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                      shape: CircleBorder(),
+                      padding: pButton,
+                      primary: black87, // background
+                      onPrimary: white, // foreground
                     ),
+                    child: Text(
+                      product.rating?.rate.toString() ?? '',
+                      style: ratingTextStyle,
+                      textAlign: TextAlign.right,
+                    ),
+                    onPressed: () {},
                   ),
 
                   /// Ratig count
                   Container(
-                    padding: EdgeInsets.all(3),
+                    padding: pRating,
                     width: 30.0,
                     height: 20.0,
                     alignment: Alignment.center,
-                    decoration: BoxDecoration(
-                      color: Colors.grey,
-                      borderRadius: BorderRadius.circular(4),
-                    ),
+                    decoration: decoGrey,
                     child: Text(
                       product.rating?.count.toString() ?? '',
-                      style: const TextStyle(
-                        color: Colors.white,
-                        fontWeight: FontWeight.bold,
-                        fontSize: 12,
-                      ),
+                      style: buttonsTextStyle,
                       textAlign: TextAlign.right,
                     ),
                   ),
@@ -131,19 +106,13 @@ class ProductListItem extends StatelessWidget {
 
             /// Product title
             Padding(
-              padding: const EdgeInsets.symmetric(
-                vertical: 5,
-              ),
+              padding: pTitle,
               child: Row(
                 children: [
                   Expanded(
                     child: Text(
                       product.title ?? '',
-                      style: const TextStyle(
-                        fontWeight: FontWeight.bold,
-                        fontSize: 18,
-                        letterSpacing: 0.5,
-                      ),
+                      style: productTitleTextStyle,
                       textAlign: TextAlign.left,
                     ),
                   ),
@@ -154,13 +123,11 @@ class ProductListItem extends StatelessWidget {
             /// Product description
             Text(product.description ?? '',
                 maxLines: 3,
-                style: const TextStyle(
-                  fontSize: 13,
-                ),
+                style: productDescTextStyle,
                 textAlign: TextAlign.left,
                 overflow: TextOverflow.ellipsis),
             const Divider(
-              color: Colors.black,
+              color: black,
               indent: 1,
               endIndent: 1,
             ),

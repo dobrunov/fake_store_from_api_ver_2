@@ -3,9 +3,13 @@ import 'package:flutter/material.dart';
 const Color black = Colors.black;
 const Color black87 = Colors.black87;
 const Color white = Colors.white;
+const Color grey = Colors.grey;
+const Color teal = Colors.teal;
+
+///
 
 const buttonsTextStyle = TextStyle(
-  color: Colors.white,
+  color: white,
   fontWeight: FontWeight.bold,
   fontSize: 12,
 );
@@ -29,19 +33,19 @@ const priceTextTextStyle = TextStyle(
 const priceTextStyle = TextStyle(fontWeight: FontWeight.normal, fontSize: 13);
 
 const ratingTextStyle = TextStyle(
-  color: Colors.white,
+  color: white,
   fontWeight: FontWeight.bold,
   fontSize: 12,
 );
 
 const categoryTextStyle = TextStyle(
-  color: Colors.teal,
+  color: teal,
   fontWeight: FontWeight.bold,
   fontSize: 12,
 );
 
 BoxDecoration decoGrey = BoxDecoration(
-  color: Colors.grey,
+  color: grey,
   borderRadius: BorderRadius.circular(4),
 );
 

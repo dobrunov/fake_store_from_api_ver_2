@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../bloc/product_bloc.dart';
+import '../styles/styles.dart';
 
 class ProductList extends StatefulWidget {
   @override
@@ -23,7 +24,7 @@ class _ProductListState extends State<ProductList> {
             if (state.products.isEmpty) {
               return const Center(
                   child: CircularProgressIndicator(
-                valueColor: AlwaysStoppedAnimation<Color>(Colors.grey),
+                valueColor: AlwaysStoppedAnimation<Color>(grey),
               ));
             }
             return ListView.builder(
@@ -36,7 +37,7 @@ class _ProductListState extends State<ProductList> {
           default:
             return const Center(
                 child: CircularProgressIndicator(
-              valueColor: AlwaysStoppedAnimation<Color>(Colors.grey),
+              valueColor: AlwaysStoppedAnimation<Color>(grey),
             ));
         }
       },

@@ -1,4 +1,4 @@
-#fake_store_from_api_ver_2
+# fake_store_from_api_ver_2
 
 Fetch products list from API with BloC
 
